@@ -2,681 +2,685 @@
 <html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rastreio de Traço Borderline</title>
-    <meta property="og:title" content="Rastreio de Traço Borderline" />
-    <meta property="og:description" content="Avalie seus traços de personalidade com esta escala detalhada." />
-    <meta property="og:image" content="https://i.pinimg.com/originals/4c/36/60/4c36602eccb8230a72b6c60b7a4bc2fe.jpg" />
-    <meta property="og:url" content="https://ricmurtapsicologia.github.io/Rastreio-de-Borderline/" />
-    <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.4.0/justgage.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js" async></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.4.0/justgage.min.js" async></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: url('https://i.pinimg.com/originals/4c/36/60/4c36602eccb8230a72b6c60b7a4bc2fe.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            margin: 0;
-            padding: 0px;
-            text-align: center;
-            font-size: 2vw; /* Adicione esta linha para fontes responsivas */
-        }
-
-        header {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            border-radius: 0 0 12px 12px;
-            width: 100vw;
-            margin: 0;
-            text-align: center;
-            background-image: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: auto;
-            max-height: 100vh; /* Adicione esta linha para garantir que o header não exceda a altura da tela */
-        }
-
-        main {
-            width: 80%;
-            max-width: 800px;
-            background-color: rgba(255, 255, 255, 0.95);
-            margin: 50px auto;
-            padding: 30px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            text-align: left;
-            color: black;
-        }
-
-        .question-section {
-            margin-bottom: 20px;
-        }
-
-        .question-section h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #2E8B57;
-        }
-
-        .question {
-            margin: 10px 0;
-            padding: 12px;
-            background-color: rgba(238, 249, 240, 0.9);
-            border-left: 4px solid #5CB85C;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        select,
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: rgba(249, 249, 249, 0.9);
-        }
-
-        .instructions {
-            font-size: 16px;
-            text-align: justify;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        button {
-            background: linear-gradient(135deg, #4CAF50, #45a049);
-            color: white;
-            padding: 15px;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-            border-radius: 8px;
-            width: 100%;
-            font-size: 18px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        button:hover {
-            background-color: #388E3C;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .gauge-container {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .gauge-desc {
-            margin-top: 10px;
-            font-size: 16px;
-            color: #555;
-            font-weight: bold;
-        }
-
-        .result-section {
-            margin-top: 20px;
-            text-align: justify;
-        }
-
-        .result-item {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            main {
-                width: 90%;
-                padding: 15px;
-            }
-
-            .instructions {
-                font-size: 14px;
-            }
-
-            button {
-                padding: 15px;
-                font-size: 16px;
-            }
-
-            .gauge-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                font-size: 20px;
-                padding: 20px;
-            }
-
-            main {
-                padding: 15px;
-            }
-
-            .instructions {
-                font-size: 14px;
-            }
-
-            button {
-                padding: 10px;
-                font-size: 16px;
-            }
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rastreio de Traço Borderline</title>
+	<meta property="og:title" content="Rastreio de Traço Borderline" />
+	<meta property="og:description" content="Avalie seus traços de personalidade com esta escala detalhada." />
+	<meta property="og:image" content="https://i.pinimg.com/originals/4c/36/60/4c36602eccb8230a72b6c60b7a4bc2fe.jpg" />
+	<meta property="og:url" content="https://ricmurtapsicologia.github.io/Rastreio-de-Borderline/" />
+	<meta property="og:type" content="website" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.4.0/justgage.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js" async></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.4.0/justgage.min.js" async></script>
+	<style>
+		body {
+		    font-family: Arial, sans-serif;
+		    background: url('https://i.pinimg.com/originals/4c/36/60/4c36602eccb8230a72b6c60b7a4bc2fe.jpg') no-repeat center center fixed;
+		    background-size: cover;
+		    color: white;
+		    margin: 0;
+		    padding: 0px;
+		    text-align: center;
+		    font-size: 2vw; /* Adicione esta linha para fontes responsivas */
+		}
+		
+		header {
+		    background-color: rgba(0, 0, 0, 0.7);
+		    padding: 20px 0;
+		    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+		    border-radius: 0 0 12px 12px;
+		    width: 100vw;
+		    margin: 0;
+		    text-align: center;
+		    background-image: none;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    height: auto;
+		    max-height: 100vh; /* Adicione esta linha para garantir que o header não exceda a altura da tela */
+		}
+		
+		main {
+		    width: 80%;
+		    max-width: 800px;
+		    background-color: rgba(255, 255, 255, 0.95);
+		    margin: 50px auto;
+		    padding: 30px;
+		    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+		    border-radius: 12px;
+		    text-align: left;
+		    color: black;
+		}
+		
+		.question-section {
+		    margin-bottom: 20px;
+		}
+		
+		.question-section h2 {
+		    font-size: 24px;
+		    margin-bottom: 15px;
+		    color: #2E8B57;
+		}
+		
+		.question {
+		    margin: 10px 0;
+		    padding: 12px;
+		    background-color: rgba(238, 249, 240, 0.9);
+		    border-left: 4px solid #5CB85C;
+		    border-radius: 8px;
+		    font-size: 16px;
+		}
+		
+		select,
+		input {
+		    width: 100%;
+		    padding: 10px;
+		    margin-top: 5px;
+		    border: 1px solid #ccc;
+		    border-radius: 5px;
+		    background-color: rgba(249, 249, 249, 0.9);
+		}
+		
+		.instructions {
+		    font-size: 16px;
+		    text-align: justify;
+		    margin-bottom: 20px;
+		    color: #555;
+		}
+		
+		button {
+		    background: linear-gradient(135deg, #4CAF50, #45a049);
+		    color: white;
+		    padding: 15px;
+		    border: none;
+		    cursor: pointer;
+		    margin-top: 20px;
+		    border-radius: 8px;
+		    width: 100%;
+		    font-size: 18px;
+		    transition: background-color 0.3s ease, transform 0.2s ease;
+		}
+		
+		button:hover {
+		    background-color: #388E3C;
+		    transform: translateY(-3px);
+		    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+		}
+		
+		.gauge-container {
+		    display: flex;
+		    justify-content: space-around;
+		    margin-top: 20px;
+		}
+		
+		.gauge-desc {
+		    margin-top: 10px;
+		    font-size: 16px;
+		    color: #555;
+		    font-weight: bold;
+		}
+		
+		.result-section {
+		    margin-top: 20px;
+		    text-align: justify;
+		}
+		
+		.result-item {
+		    margin-bottom: 10px;
+		}
+		
+		@media (max-width: 768px) {
+		    main {
+		        width: 90%;
+		        padding: 15px;
+		    }
+		
+		    .instructions {
+		        font-size: 14px;
+		    }
+		
+		    button {
+		        padding: 15px;
+		        font-size: 16px;
+		    }
+		
+		    .gauge-container {
+		        flex-direction: column;
+		        align-items: center;
+		    }
+		}
+		
+		@media (max-width: 480px) {
+		    header {
+		        font-size: 20px;
+		        padding: 20px;
+		    }
+		
+		    main {
+		        padding: 15px;
+		    }
+		
+		    .instructions {
+		        font-size: 14px;
+		    }
+		
+		    button {
+		        padding: 10px;
+		        font-size: 16px;
+		    }
+		}
+	</style>
 </head>
 
 <body>
-    <header>
-        <h1 style="color: white; font-size: 48px; font-weight: bold; text-align: center; margin: 0; padding: 20px 0;">
-            Rastreio de Traço Borderline</h1>
-    </header>
-    <main>
-        <div class="instructions">
-            <p>Esta escala foi desenvolvida para medir traços de personalidade borderline. Responda cada questão conforme você realmente se sente, utilizando a seguinte escala para cada afirmação:</p>
-            <p><strong>Nunca ou raramente - Ocasionalmente - Frequentemente - Quase sempre ou sempre</strong></p>
-            <p>Sua honestidade é essencial para garantir a validade dos resultados. Não há respostas corretas ou erradas.</p>
-        </div>
-        <form id="borderlineForm">
-            <div class="patient-info">
-                <input type="text" id="fullName" placeholder="Nome completo">
-                <input type="email" id="email" placeholder="E-mail">
-                <input type="text" id="phoneNumber" placeholder="Telefone">
-                <input type="text" id="age" placeholder="Idade">
-                <input type="date" id="date" placeholder="Data de realização do teste">
-            </div>
-            <!-- Inserir perguntas aqui -->
-            <div class="question">
-                <label>1. Tenho dificuldades em controlar meus impulsos, como gastar dinheiro ou dirigir de forma imprudente.</label>
-                <select name="q1">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>2. Frequentemente sinto um vazio dentro de mim, como se algo estivesse faltando.</label>
-                <select name="q2">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>3. Tenho medo de que as pessoas importantes para mim me deixem.</label>
-                <select name="q3">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>4. Eu sinto que meus relacionamentos são estáveis e duradouros.*</label>
-                <select name="q4">
-                    <option value="4">Raramente ou nunca</option>
-                    <option value="3">De vez em quando</option>
-                    <option value="2">Com frequência</option>
-                    <option value="1">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>5. Minhas emoções mudam com muita frequência ao longo do dia.</label>
-                <select name="q5">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>6. Às vezes, sinto vontade de me machucar ou tirar minha própria vida.</label>
-                <select name="q6">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>7. Tenho dificuldades em saber quem eu realmente sou.</label>
-                <select name="q7">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>8. Eu frequentemente ajo por impulso, sem considerar o impacto nos outros.</label>
-                <select name="q8">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>9. Sinto-me ansiosa(o) quando alguém próximo a mim não está disponível.</label>
-                <select name="q9">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>10. Eu consigo controlar minhas emoções de maneira eficaz.*</label>
-                <select name="q10">
-                    <option value="4">Raramente ou nunca</option>
-                    <option value="3">De vez em quando</option>
-                    <option value="2">Com frequência</option>
-                    <option value="1">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>11. Às vezes, sinto que sou várias pessoas diferentes em uma só.</label>
-                <select name="q11">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>12. Eu já considerei seriamente acabar com minha própria vida.</label>
-                <select name="q12">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>13. Eu me preocupo excessivamente com o fato de que as pessoas que amo podem me abandonar.</label>
-                <select name="q13">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>14. Minha emoção muda de maneira muito rápida, e às vezes sinto que não posso controlá-la.</label>
-                <select name="q14">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>15. Tenho uma sensação persistente de que nada me satisfaz completamente.</label>
-                <select name="q15">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>16. Eu sou cuidadosa(o) e penso bem antes de agir.*</label>
-                <select name="q16">
-                    <option value="4">Raramente ou nunca</option>
-                    <option value="3">De vez em quando</option>
-                    <option value="2">Com frequência</option>
-                    <option value="1">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>17. Eu tenho dificuldade em controlar minha raiva, o que pode levar a explosões.</label>
-                <select name="q17">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>18. Meus relacionamentos são intensos e mudam rapidamente de bons para ruins.</label>
-                <select name="q18">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>19. Eu sinto raiva intensa com frequência, mesmo por coisas pequenas.</label>
-                <select name="q19">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>20. Eu frequentemente tento agradar os outros para evitar que me deixem.</label>
-                <select name="q20">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>21. Eu rapidamente passo de gostar muito de alguém para não gostar nada dessa pessoa.</label>
-                <select name="q21">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>22. Tenho pensamentos suicidas quando estou me sentindo muito mal.</label>
-                <select name="q22">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>23. Sinto que estou sempre à procura de algo que preencha o vazio dentro de mim.</label>
-                <select name="q23">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>24. Às vezes, tomo decisões impulsivas que depois me arrependo.</label>
-                <select name="q24">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>25. Frequentemente sinto que minha autoimagem muda drasticamente em curtos períodos de tempo.</label>
-                <select name="q25">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>26. Minhas emoções são como uma montanha-russa, mudando rapidamente de feliz para triste ou irritada(o).</label>
-                <select name="q26">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>27. Eu idealizo as pessoas e, logo em seguida, fico profundamente desapontada(o) com elas.</label>
-                <select name="q27">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>28. Eu me envolvo em comportamentos arriscados ou perigosos sem pensar nas consequências.</label>
-                <select name="q28">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>29. Tenho dificuldades em manter relacionamentos estáveis.</label>
-                <select name="q29">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>30. Geralmente me sinto em paz com quem eu sou.*</label>
-                <select name="q30">
-                    <option value="4">Raramente ou nunca</option>
-                    <option value="3">De vez em quando</option>
-                    <option value="2">Com frequência</option>
-                    <option value="1">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>31. Eu me sinto dominada(o) por minhas emoções, e isso me causa sofrimento.</label>
-                <select name="q31">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>32. Minhas emoções mudam de maneira intensa, sem que eu consiga controlá-las.</label>
-                <select name="q32">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>33. Eu já me machuquei intencionalmente para lidar com a dor emocional.</label>
-                <select name="q33">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>34. Eu temo que as pessoas me abandonem se eu não corresponder às suas expectativas.</label>
-                <select name="q34">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>35. Meus relacionamentos são marcados por altos e baixos emocionais intensos.</label>
-                <select name="q35">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>36. Eu consigo controlar minha raiva de maneira eficaz.*</label>
-                <select name="q36">
-                    <option value="4">Raramente ou nunca</option>
-                    <option value="3">De vez em quando</option>
-                    <option value="2">Com frequência</option>
-                    <option value="1">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>37. Eu tenho dificuldades em planejar minhas ações antes de executá-las.</label>
-                <select name="q37">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>38. As pessoas próximas a mim muitas vezes dizem que sou imprevisível em meus relacionamentos.</label>
-                <select name="q38">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>39. Eu me preocupo constantemente que, se não agir de certa maneira, serei abandonada(o).</label>
-                <select name="q39">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>40. Tenho episódios de tristeza profunda que aparecem sem motivo aparente.</label>
-                <select name="q40">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>41. Tenho dificuldades em encontrar sentido ou propósito nas coisas que faço.</label>
-                <select name="q41">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>42. Eu faço grandes esforços para evitar que as pessoas se afastem de mim.</label>
-                <select name="q42">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>43. Eu sinto que minha autoimagem muda conforme as expectativas das pessoas ao meu redor.</label>
-                <select name="q43">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>44. Minhas emoções frequentemente se alternam entre extremos de maneira muito rápida.</label>
-                <select name="q44">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-            <div class="question">
-                <label>45. Eu sinto que, se eu não controlar as situações, serei traída(o) ou abandonada(o).</label>
-                <select name="q45">
-                    <option value="1">Raramente ou nunca</option>
-                    <option value="2">De vez em quando</option>
-                    <option value="3">Com frequência</option>
-                    <option value="4">Quase sempre/ sempre</option>
-                </select>
-            </div>
-
-            <div class="gauge-container">
-                <div id="borderlineGauge" style="width: 100%;"></div>
-            </div>
-            <button type="button" onclick="calculateScore()">Calcular</button>
-        </form>
-        <div class="result-section" id="results"></div>
-        <button id="whatsappButton" style="display: none;" onclick="sendWhatsApp()">Enviar via WhatsApp</button>
-    </main>
-<script>
-    let borderlineGauge;
-    window.onload = function() {
-        borderlineGauge = new JustGage({
-            id: "borderlineGauge",
-            value: 45, // Define o valor inicial como 45
-            min: 45,   // Define a pontuação mínima correta
-            max: 180,  // Define a pontuação máxima correta
-            title: "Nível de Traço Borderline",
-            label: "pontos",
-            levelColors: ["#00e400", "#ffff00", "#ff7e00", "#ff0000"]
-        });
-    };
-
-    function calculateScore() {
-        let totalScore = 0;
-        const formData = new FormData(document.getElementById('borderlineForm'));
-        formData.forEach((value, key) => {
-            const questionNumber = parseInt(key.substring(1));
-            let score = parseInt(value);
-            // Verificação e inversão da pontuação para perguntas específicas
-            if ([4, 10, 16, 30, 36].includes(questionNumber)) {
-                score = 5 - score; // Inverte a pontuação (1 -> 4, 2 -> 3, 3 -> 2, 4 -> 1)
-            }
-            totalScore += score; // Soma diretamente para as demais perguntas
-        });
-        
-        borderlineGauge.refresh(totalScore);
-        displayResults(totalScore);
-        document.getElementById("whatsappButton").style.display = "inline-block"; // Exibe o botão do WhatsApp
-    }
-
-    function displayResults(score) {
-        const resultsDiv = document.getElementById('results');
-        const classification = determineClassification(score);
-        resultsDiv.innerHTML = `<h2>Resultados</h2><div>Seu nível de traço borderline é: ${score}</div><div>Classificação: ${classification}</div><div>${interpretClassification(classification)}</div>`;
-    }
-
-    function determineClassification(score) {
-        if (score <= 74) return "Sem Traços Borderline";
-        else if (score <= 105) return "Traços Borderline Leves";
-        else if (score <= 135) return "Traços Borderline Moderados";
-        else if (score <= 165) return "Transtorno de Personalidade Borderline Provável";
-        else return "Transtorno de Personalidade Borderline Confirmado";
-    }
-
-    function interpretClassification(classification) {
-        switch (classification) {
-            case "Sem Traços Borderline":
-                return "Você não apresenta características significativas de personalidade borderline.";
-            case "Traços Borderline Leves":
-                return "Você apresenta traços leves de personalidade borderline. Pode não haver um impacto significativo na sua vida diária, mas pode ser útil monitorar essas características.";
-            case "Traços Borderline Moderados":
-                return "Você apresenta traços moderados de personalidade borderline. É recomendado buscar orientação profissional para entender melhor como esses traços podem estar influenciando sua vida.";
-            case "Transtorno de Personalidade Borderline Provável":
-                return "Os resultados indicam uma alta probabilidade de Transtorno de Personalidade Borderline. Uma avaliação clínica completa é altamente recomendada.";
-            case "Transtorno de Personalidade Borderline Confirmado":
-                return "Os resultados indicam fortemente a presença do Transtorno de Personalidade Borderline. É essencial procurar ajuda de um profissional de saúde mental.";
-            default:
-                return "Sem interpretação disponível.";
-        }
-    }
-
-    function sendWhatsApp() {
-        const score = borderlineGauge.config.value;
-        const classification = determineClassification(score);
-        const message = `Meu nível de traço borderline na escala é: ${score} pontos. Classificação: ${classification}.`;
-        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-    }
-</script>
+	<header>
+		<h1 style="color: white; font-size: 48px; font-weight: bold; text-align: center; margin: 0; padding: 20px 0;"> Rastreio de Traço Borderline</h1>
+	</header>
+	<main>
+		<div class="instructions">
+			<p>Esta escala foi desenvolvida para medir traços de personalidade borderline. Responda cada questão conforme você realmente se sente, utilizando a seguinte escala para cada afirmação:</p>
+			<p><strong>Nunca ou raramente - Ocasionalmente - Frequentemente - Quase sempre ou sempre</strong></p>
+			<p>Sua honestidade é essencial para garantir a validade dos resultados. Não há respostas corretas ou erradas.</p>
+		</div>
+		<form id="borderlineForm">
+			<div class="patient-info">
+				<input type="text" id="fullName" placeholder="Nome completo">
+				<input type="email" id="email" placeholder="E-mail">
+				<input type="text" id="phoneNumber" placeholder="Telefone">
+				<input type="text" id="age" placeholder="Idade">
+				<input type="date" id="date" placeholder="Data de realização do teste">
+			</div>
+			<!-- Inserir perguntas aqui -->
+			<div class="question">
+				<label>1. Tenho dificuldades em controlar meus impulsos, como gastar dinheiro ou dirigir de forma imprudente.</label>
+				<select name="q1">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>2. Frequentemente sinto um vazio dentro de mim, como se algo estivesse faltando.</label>
+				<select name="q2">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>3. Tenho medo de que as pessoas importantes para mim me deixem.</label>
+				<select name="q3">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>4. Eu sinto que meus relacionamentos são estáveis e duradouros.*</label>
+				<select name="q4">
+					<option value="4">Raramente ou nunca</option>
+					<option value="3">De vez em quando</option>
+					<option value="2">Com frequência</option>
+					<option value="1">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>5. Minhas emoções mudam com muita frequência ao longo do dia.</label>
+				<select name="q5">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>6. Às vezes, sinto vontade de me machucar ou tirar minha própria vida.</label>
+				<select name="q6">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>7. Tenho dificuldades em saber quem eu realmente sou.</label>
+				<select name="q7">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>8. Eu frequentemente ajo por impulso, sem considerar o impacto nos outros.</label>
+				<select name="q8">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>9. Sinto-me ansiosa(o) quando alguém próximo a mim não está disponível.</label>
+				<select name="q9">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>10. Eu consigo controlar minhas emoções de maneira eficaz.*</label>
+				<select name="q10">
+					<option value="4">Raramente ou nunca</option>
+					<option value="3">De vez em quando</option>
+					<option value="2">Com frequência</option>
+					<option value="1">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>11. Às vezes, sinto que sou várias pessoas diferentes em uma só.</label>
+				<select name="q11">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>12. Eu já considerei seriamente acabar com minha própria vida.</label>
+				<select name="q12">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>13. Eu me preocupo excessivamente com o fato de que as pessoas que amo podem me abandonar.</label>
+				<select name="q13">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>14. Minha emoção muda de maneira muito rápida, e às vezes sinto que não posso controlá-la.</label>
+				<select name="q14">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>15. Tenho uma sensação persistente de que nada me satisfaz completamente.</label>
+				<select name="q15">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>16. Eu sou cuidadosa(o) e penso bem antes de agir.*</label>
+				<select name="q16">
+					<option value="4">Raramente ou nunca</option>
+					<option value="3">De vez em quando</option>
+					<option value="2">Com frequência</option>
+					<option value="1">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>17. Eu tenho dificuldade em controlar minha raiva, o que pode levar a explosões.</label>
+				<select name="q17">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>18. Meus relacionamentos são intensos e mudam rapidamente de bons para ruins.</label>
+				<select name="q18">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>19. Eu sinto raiva intensa com frequência, mesmo por coisas pequenas.</label>
+				<select name="q19">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>20. Eu frequentemente tento agradar os outros para evitar que me deixem.</label>
+				<select name="q20">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>21. Eu rapidamente passo de gostar muito de alguém para não gostar nada dessa pessoa.</label>
+				<select name="q21">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>22. Tenho pensamentos suicidas quando estou me sentindo muito mal.</label>
+				<select name="q22">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>23. Sinto que estou sempre à procura de algo que preencha o vazio dentro de mim.</label>
+				<select name="q23">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>24. Às vezes, tomo decisões impulsivas que depois me arrependo.</label>
+				<select name="q24">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>25. Frequentemente sinto que minha autoimagem muda drasticamente em curtos períodos de tempo.</label>
+				<select name="q25">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>26. Minhas emoções são como uma montanha-russa, mudando rapidamente de feliz para triste ou irritada(o).</label>
+				<select name="q26">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>27. Eu idealizo as pessoas e, logo em seguida, fico profundamente desapontada(o) com elas.</label>
+				<select name="q27">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>28. Eu me envolvo em comportamentos arriscados ou perigosos sem pensar nas consequências.</label>
+				<select name="q28">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>29. Tenho dificuldades em manter relacionamentos estáveis.</label>
+				<select name="q29">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>30. Geralmente me sinto em paz com quem eu sou.*</label>
+				<select name="q30">
+					<option value="4">Raramente ou nunca</option>
+					<option value="3">De vez em quando</option>
+					<option value="2">Com frequência</option>
+					<option value="1">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>31. Eu me sinto dominada(o) por minhas emoções, e isso me causa sofrimento.</label>
+				<select name="q31">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>32. Minhas emoções mudam de maneira intensa, sem que eu consiga controlá-las.</label>
+				<select name="q32">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>33. Eu já me machuquei intencionalmente para lidar com a dor emocional.</label>
+				<select name="q33">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>34. Eu temo que as pessoas me abandonem se eu não corresponder às suas expectativas.</label>
+				<select name="q34">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>35. Meus relacionamentos são marcados por altos e baixos emocionais intensos.</label>
+				<select name="q35">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>36. Eu consigo controlar minha raiva de maneira eficaz.*</label>
+				<select name="q36">
+					<option value="4">Raramente ou nunca</option>
+					<option value="3">De vez em quando</option>
+					<option value="2">Com frequência</option>
+					<option value="1">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>37. Eu tenho dificuldades em planejar minhas ações antes de executá-las.</label>
+				<select name="q37">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>38. As pessoas próximas a mim muitas vezes dizem que sou imprevisível em meus relacionamentos.</label>
+				<select name="q38">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>39. Eu me preocupo constantemente que, se não agir de certa maneira, serei abandonada(o).</label>
+				<select name="q39">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>40. Tenho episódios de tristeza profunda que aparecem sem motivo aparente.</label>
+				<select name="q40">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>41. Tenho dificuldades em encontrar sentido ou propósito nas coisas que faço.</label>
+				<select name="q41">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>42. Eu faço grandes esforços para evitar que as pessoas se afastem de mim.</label>
+				<select name="q42">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>43. Eu sinto que minha autoimagem muda conforme as expectativas das pessoas ao meu redor.</label>
+				<select name="q43">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>44. Minhas emoções frequentemente se alternam entre extremos de maneira muito rápida.</label>
+				<select name="q44">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="question">
+				<label>45. Eu sinto que, se eu não controlar as situações, serei traída(o) ou abandonada(o).</label>
+				<select name="q45">
+					<option value="1">Raramente ou nunca</option>
+					<option value="2">De vez em quando</option>
+					<option value="3">Com frequência</option>
+					<option value="4">Quase sempre/ sempre</option>
+				</select>
+			</div>
+			<div class="gauge-container">
+				<div id="borderlineGauge" style="width: 100%;"></div>
+			</div>
+			<button type="button" onclick="calculateScore()">Calcular</button>
+		</form>
+		<div class="result-section" id="results"></div>
+		<button id="whatsappButton" style="display: none;" onclick="sendWhatsApp()">Enviar via WhatsApp</button>
+	</main>
+	<script>
+		let borderlineGauge;
+		window.onload = function() {
+		    borderlineGauge = new JustGage({
+		        id: "borderlineGauge",
+		        value: 45, // Define o valor inicial como 45
+		        min: 45,   // Define a pontuação mínima correta
+		        max: 180,  // Define a pontuação máxima correta
+		        title: "Nível de Traço Borderline",
+		        label: "pontos",
+		        levelColors: ["#00e400", "#ffff00", "#ff7e00", "#ff0000"]
+		    });
+		};
+		
+		function calculateScore() {
+		    let totalScore = 0;
+		    const formData = new FormData(document.getElementById('borderlineForm'));
+		    formData.forEach((value, key) => {
+		        const questionNumber = parseInt(key.substring(1));
+		        let score = parseInt(value);
+		        // Verificação e inversão da pontuação para perguntas específicas
+		        if ([4, 10, 16, 30, 36].includes(questionNumber)) {
+		            score = 5 - score; // Inverte a pontuação (1 -> 4, 2 -> 3, 3 -> 2, 4 -> 1)
+		        }
+		        totalScore += score; // Soma diretamente para as demais perguntas
+		    });
+		    
+		    borderlineGauge.refresh(totalScore);
+		    displayResults(totalScore);
+		    document.getElementById("whatsappButton").style.display = "inline-block"; // Exibe o botão do WhatsApp
+		}
+		
+		function displayResults(score) {
+		    const resultsDiv = document.getElementById('results');
+		    const classification = determineClassification(score);
+		    resultsDiv.innerHTML = `<h2>Resultados</h2><div>Seu nível de traço borderline é: ${score}</div><div>Classificação: ${classification}</div><div>${interpretClassification(classification)}</div>`;
+		}
+		
+		function determineClassification(score) {
+		    if (score <= 74) return "Sem Traços Borderline";
+		    else if (score <= 105) return "Traços Borderline Leves";
+		    else if (score <= 135) return "Traços Borderline Moderados";
+		    else if (score <= 165) return "Transtorno de Personalidade Borderline Provável";
+		    else return "Transtorno de Personalidade Borderline Confirmado";
+		}
+		
+		function interpretClassification(classification) {
+		  switch (classification) {
+		case "Sem Traços Borderline":
+		  return "Não foram identificados traços relevantes de personalidade borderline. Continue adotando suas práticas de autocuidado para manter seu equilíbrio emocional.";
+		
+		case "Traços Borderline Leves":
+		  return "Foram observados traços leves de personalidade borderline, com impacto mínimo no cotidiano. Podemos trabalhar esses padrões em sessão para fortalecer suas habilidades de regulação emocional.";
+		
+		case "Traços Borderline Moderados":
+		  return "Você apresenta traços moderados de personalidade borderline. Recomendo aprofundarmos em terapia para entender esses padrões e desenvolver estratégias específicas de estabilidade emocional.";
+		
+		case "Traços Borderline Elevados":
+		  return "Seus resultados indicam traços elevados de personalidade borderline. É indicado intensificar o trabalho terapêutico focado em regulação emocional e formas de lidar com possíveis instabilidades.";
+		
+		case "Suspeita de Transtorno de Personalidade Borderline":
+		  return "Existem indícios que sugerem possível transtorno de personalidade borderline. Uma avaliação clínica detalhada em sessão pode ajudar a esclarecer o diagnóstico e orientar o plano terapêutico adequadamente.";
+		
+		default:
+		  return "Interpretação inconclusiva. Em nossa próxima sessão, poderemos revisar esses resultados e esclarecer quaisquer dúvidas.";
+		  }
+		}
+		
+		function sendWhatsApp() {
+		    const score = borderlineGauge.config.value;
+		    const classification = determineClassification(score);
+		    const message = `Meu nível de traço borderline na escala é: ${score} pontos. Classificação: ${classification}.`;
+		    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+		    window.open(whatsappUrl, '_blank');
+		}
+	</script>
 </body>
+
 </html>
