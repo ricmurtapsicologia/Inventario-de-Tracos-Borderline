@@ -162,8 +162,7 @@
 
         <div class="actions">
           <button type="button" class="btn-primary" id="btnCalc">Calcular</button>
-          <button type="button" class="btn-outline hidden" id="btnWhats">Enviar ao meu psicólogo</button>
-          <button type="button" class="btn-neutral hidden" id="btnCopy">Copiar relatório</button>
+<button type="button" class="btn-neutral hidden" id="btnCopy">Copiar relatório</button>
         </div>
       </form>
 
@@ -404,7 +403,6 @@
 
     // UI handlers
     const btnCalc = document.getElementById('btnCalc');
-    const btnWhats = document.getElementById('btnWhats');
     const btnCopy = document.getElementById('btnCopy');
     const results = document.getElementById('results');
     const reportBox = document.getElementById('reportBox');
@@ -436,24 +434,9 @@
       const report = buildReport({name: fullName, date, scoreRaw: score, scorePct: lastNormalized, classLabel: c.label, riskFlag});
       reportText.value = report;
       reportBox.classList.remove('hidden');
-
-      btnWhats.classList.remove('hidden');
       btnCopy.classList.remove('hidden');
     });
-
-    btnWhats.addEventListener('click', () => {
-      if (lastScore == null) return;
-      const fullName = (document.getElementById('fullName').value || '').trim();
-      const date = (document.getElementById('date').value || '').trim();
-      const msg = reportText.value || `Rastreio de traços borderline — Intensidade: ${lastNormalized}%. Escore: ${lastScore}.`;
-      const who = fullName ? `Pessoa: ${fullName}\n` : '';
-      const when = date ? `Data: ${date}\n` : '';
-      const finalMsg = `${who}${when}${msg}`;
-      const url = `https://wa.me/?text=${encodeURIComponent(finalMsg)}`;
-      window.open(url, '_blank');
-    });
-
-    btnCopy.addEventListener('click', async () => {
+btnCopy.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(reportText.value);
         btnCopy.textContent = 'Relatório copiado!';
