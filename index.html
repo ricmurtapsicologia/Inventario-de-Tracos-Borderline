@@ -146,11 +146,15 @@
           <div class="patient-grid">
             <div>
               <label for="fullName">Nome completo</label>
-              <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Seu nome" />
+              <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Seu nome" required />
             </div>
             <div>
-              <label for="date">Data do teste</label>
-              <input id="date" name="date" type="date" />
+              <label for="birthDate">Data de nascimento</label>
+              <input id="birthDate" name="birthDate" type="date" required />
+            </div>
+            <div>
+              <label for="date">Data de aplicação do rastreio</label>
+              <input id="date" name="date" type="date" required />
             </div>
           </div>
         </fieldset>
