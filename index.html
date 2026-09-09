@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rastreio de Traço Borderline — v4</title>
+  <title>Inventário de Traços Borderline</title>
   <meta name="description" content="Triagem de traços borderline (uso clínico orientativo, não diagnóstico)." />
-  <meta property="og:title" content="Rastreio de Traço Borderline" />
+  <meta property="og:title" content="Inventário de Traços Borderline" />
   <meta property="og:description" content="Avaliação de traços de personalidade (uso orientativo)." />
   <meta property="og:type" content="website" />
 
@@ -53,7 +53,7 @@
     }
     .banner {
       position:absolute; inset:0; pointer-events:none;
-      background: url('https://i.pinimg.com/originals/4c/36/60/4c36602eccb8230a72b6c60b7a4bc2fe.jpg') center/cover no-repeat;
+      background: url('https://ricmurtapsicologia.github.io/Inicio-de-Jornada-Terapeutica/assets/heroes/borderline.jpg?v=4.0.0') center/cover no-repeat;
       opacity:.18;
       filter: saturate(0.9) contrast(1.1);
     }
@@ -108,7 +108,7 @@
     .panic-fab { position: fixed; right: 16px; bottom: 16px; z-index: 50; }
     .panic-fab a { display:inline-flex; align-items:center; gap:10px; background: var(--danger); color:#fff; padding: 12px 16px; border-radius: 999px; font-weight:800; text-decoration:none; box-shadow:0 8px 24px rgba(239,68,68,.4); }
   </style>
-  <link rel="stylesheet" href="https://ricmurtapsicologia.github.io/Inicio-de-Jornada-Terapeutica/assets/screening-uniformity-v1.css?v=2.2.1-decoupled">
+  <link rel="stylesheet" href="https://ricmurtapsicologia.github.io/Inicio-de-Jornada-Terapeutica/assets/screening-uniformity-v1.css?v=4.0.0">
 
 <meta name="ric-analytics-page" content="rastreio-borderline">
 <meta name="ric-analytics-privacy" content="health">
@@ -321,7 +321,7 @@
 
     // Tema dia/noite
     const modeToggle = document.getElementById('modeToggle');
-    modeToggle.addEventListener('change', (e)=>{
+    modeToggle?.addEventListener('change', (e)=>{
       if (e.target.checked) document.body.classList.add('theme-day');
       else document.body.classList.remove('theme-day');
     });
@@ -458,6 +458,6 @@ btnCopy.addEventListener('click', async () => {
   <noscript>
     Habilite JavaScript para utilizar o instrumento.
   </noscript>
-  <script src="https://ricmurtapsicologia.github.io/Inicio-de-Jornada-Terapeutica/assets/screening-uniformity-v1.js?v=2.2.1-decoupled" defer></script>
+  <script src="https://ricmurtapsicologia.github.io/Inicio-de-Jornada-Terapeutica/assets/screening-uniformity-v1.js?v=4.0.0" defer></script>
 </body>
 </html>
